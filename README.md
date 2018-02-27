@@ -1,6 +1,6 @@
 ## What Is Assemble?
 
-Assemble is an Ionic application that allows user to create and join groups of their friends to play video games together. A group member can Assemble all group members of a particular game that will notify and send a text message to all members. Members can then RSVP to the group Assemble request.
+Assemble is an Ionic application that allows users to create and join groups of their friends to play video games together. A group member can **Assemble** a group to play a video game that will notify each member through the app and a text message. Members can then RSVP to the group **Assemble** request.
 
 ### Installation
 
@@ -13,9 +13,9 @@ $ ionic serve
 
 Once the app is running, go to:
 
-<localhost:8100> for web version
+<http://localhost:8100> for web version
 
 or 
 
-<localhost:8100/ionic-lab> for phone emulation
+<http://localhost:8100/ionic-lab> for phone emulation
 
