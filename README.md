@@ -1,26 +1,21 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+## What Is Assemble?
 
-## How to use this template
+Assemble is an Ionic application that allows user to create and join groups of their friends to play video games together. A group member can Assemble all group members of a particular game that will notify and send a text message to all members. Members can then RSVP to the group Assemble request.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+### Installation
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+To run this Ionic app on your machine you will need to have Node installed. If so run the following commands.
 
 ```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
+$ npm install
+$ ionic serve
 ```
 
-Then, to run it, cd into `myTabs` and run:
+Once the app is running, go to:
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
+<localhost:8100> for web version
 
-Substitute ios for android if not on a Mac.
+or 
+
+<localhost:8100/ionic-lab> for phone emulation
 
