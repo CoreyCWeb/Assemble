@@ -1,0 +1,21 @@
+<ion-item no-lines *ngIf="hasGroup">
+    <ion-label>Group</ion-label>
+    <ion-select [(ngModel)]="selectedGroup">
+        <ion-option *ngFor="let group of groups" value="{{group._id}}">{{group.name}}</ion-option>
+    </ion-select>
+</ion-item>
+
+<ion-row *ngIf="hasGroup">
+    <ion-col text-center>
+        <button round ion-button (click)="createInvite()">Assemble!</button>
+    </ion-col>
+</ion-row>
+
+<ion-row *ngIf="!hasGroup">
+    <ion-col text-center>
+        <p>Make groups and <strong>Assemble</strong> the squad to play games!</p>
+        <button round ion-button (click)="goToGroup()">Go</button>
+    </ion-col>
+</ion-row>
+
+

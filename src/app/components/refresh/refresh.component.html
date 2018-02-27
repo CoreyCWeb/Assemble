@@ -1,0 +1,18 @@
+<ion-content>
+    <ion-row id="refresh">
+        <ion-col  id="refreshCol" text-center>
+            <button ion-button icon-left clear small>
+            <ion-icon name="refresh"></ion-icon>
+            <div>Pull to refresh</div>
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+</ion-content>

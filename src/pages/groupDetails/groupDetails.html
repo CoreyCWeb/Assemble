@@ -1,0 +1,54 @@
+<ion-header>
+  <app-options [title]="'Group'"></app-options>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="group">
+    <ion-card-header>
+        <ion-item>
+          {{group.name}}
+          <button *ngIf="isAdmin" item-right ion-button color="danger" outline (click)="deleteGroup()">Delete</button>
+        </ion-item>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="people" item-start></ion-icon>
+            Members
+           <p item-end>{{members.length }}</p>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="person" item-start></ion-icon>
+            Admin
+            <p item-end>{{admin}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-icon name="key" item-start></ion-icon>
+          {{group.code}}
+          <button ion-button icon-left small item-end (click)="copy()">
+            <ion-icon name="clipboard"></ion-icon>
+            Copy
+          </button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+  <ion-card-header>
+    Members
+  </ion-card-header>  
+    <ion-list>
+      <ion-item *ngFor="let member of members" >
+        <text-avatar [text]="member.username" [color]="member.color" item-left></text-avatar>
+        {{member.username}}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+</ion-content>

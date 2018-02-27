@@ -1,0 +1,18 @@
+<ion-list>
+    <ion-list-header>
+      Feed
+    </ion-list-header>
+    <button ion-item *ngFor="let invite of invites" (click)='viewInvite(invite)' icon-left>  
+      <div item-content style="width:100%">
+        <h2>{{ invite.group.name}}</h2>
+        <p><strong>{{invite.date | amTimeAgo}}</strong> &#x26AC; <em>{{invite.user.username}}</em></p>
+      </div>
+      <ion-icon *ngIf="!invite.viewed" name="alert" item-end></ion-icon>
+    </button>
+    <button *ngIf="invites.length == 0" ion-item icon-left>  
+      <div item-content style="width:100%">
+        <p>no invites yet..</p>
+      </div>
+    </button>
+    
+  </ion-list>

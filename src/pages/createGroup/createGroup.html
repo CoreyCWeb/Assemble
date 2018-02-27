@@ -1,0 +1,23 @@
+<ion-header>
+ <ion-toolbar transparent>
+  <ion-title>Create Group</ion-title>
+  <ion-buttons end>
+    <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+  </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Group Name</ion-label>      
+      <ion-input [(ngModel)]="name" type="text" value=""></ion-input>
+    </ion-item>
+ 
+  </ion-list>
+ 
+  <button ion-button full (click)="create()">Create</button>
+ 
+</ion-content>

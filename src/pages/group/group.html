@@ -1,0 +1,23 @@
+<ion-header>
+  <app-options [title]="'Groups'"></app-options>
+</ion-header>
+
+<ion-content padding>
+  
+  <span text-center  *ngIf="groups.length == 0">
+    <h3>No groups yet? </h3>
+    <p color="secondary">Click the button down there to create or join a group. </p>
+  </span>
+  
+  
+  <ion-list>
+    <button ion-item *ngFor="let group of groups" (click)='viewGroup(group)'>  
+      <div item-content style="width:100%">
+        <h2>{{ group.name}}</h2>
+      </div>
+    </button>
+  </ion-list>
+    <ion-fab right bottom>
+        <button ion-fab (click)="presentActionSheet()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+</ion-content>

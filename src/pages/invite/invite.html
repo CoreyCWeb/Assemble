@@ -1,0 +1,70 @@
+<ion-header>
+  <app-options [title]="'Invite'"></app-options>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-row id="refresh">
+      <ion-col  id="refreshCol" text-center>
+          <button ion-button icon-left clear small>
+          <ion-icon id="refreshIcon" name="refresh"></ion-icon>
+          <div id="refreshText">Pull to refresh</div>
+          </button>
+      </ion-col>
+  </ion-row>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+      </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngIf="invite">
+    <ion-item>
+      <ion-icon name="calendar" item-left large></ion-icon>
+      <h2 color="primary">{{invite.group.name}}</h2>
+      <p>{{ invite.date | amTimeAgo }}</p>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="person"></ion-icon>
+          <div>{{invite.user.username}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="people"></ion-icon>
+          <div>{{invite.going.length }}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (click)="going()" [disabled]="isGoing" [outline]="isGoing" icon-left small item-end>
+          <ion-icon id="goingIcon" *ngIf="isGoing" name="checkmark"></ion-icon>
+          Going?
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  
+
+  <ion-card>
+  <ion-card-header>
+    Assembled 
+  </ion-card-header>
+
+  
+      <ion-list>
+        <ion-item *ngFor="let member of invite.going" >
+          <text-avatar [text]="member.username" [color]="member.color" item-left></text-avatar>
+          {{member.username}}
+        </ion-item>
+      </ion-list>
+    
+  
+</ion-card>
+
+</ion-content>

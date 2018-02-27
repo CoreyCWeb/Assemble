@@ -1,0 +1,23 @@
+<ion-header>
+ <ion-toolbar transparent>
+  <ion-title>Join Group</ion-title>
+  <ion-buttons end>
+    <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+  </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Group Code</ion-label>      
+      <ion-input [(ngModel)]="code" type="text" value=""></ion-input>
+    </ion-item>
+ 
+  </ion-list>
+ 
+  <button ion-button full (click)="join()">Join</button>
+ 
+</ion-content>
